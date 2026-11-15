@@ -10,9 +10,9 @@ The model uses the Ordinary Least Squares (OLS) method to calculate the optimal 
 
 The prediction equation is:
 
-\[
+$$
 \hat{y} = mx + b
-\]
+$$
 
 Where:
 - `m` = Slope
@@ -22,15 +22,15 @@ Where:
 
 ### Slope
 
-\[
-m = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sum (x_i-\bar{x})^2}
-\]
+$$
+m = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^{n}(x_i-\bar{x})^2}
+$$
 
 ### Intercept
 
-\[
-b = \bar{y}-m\bar{x}
-\]
+$$
+b = \bar{y} - m\bar{x}
+$$
 
 ## Technologies Used
 
