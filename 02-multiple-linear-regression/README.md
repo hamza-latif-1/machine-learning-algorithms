@@ -75,12 +75,6 @@ $$
 
 To minimize the cost function, differentiate it with respect to $\beta$ and set the derivative equal to zero.
 
-$$
-\frac{\partial J}{\partial \beta}
-=
--2X_b^T(y-X_b\beta)
-$$
-
 Setting the derivative equal to zero:
 
 $$
