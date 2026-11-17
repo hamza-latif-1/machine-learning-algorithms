@@ -73,12 +73,24 @@ $$
 J(\beta) = (y-X_b\beta)^T(y-X_b\beta)
 $$
 
-To minimize this cost function, we differentiate with respect to $\beta$ and set the derivative equal to zero:
+To minimize the cost function, differentiate it with respect to $\beta$ and set the derivative equal to zero.
 
 $$
-\frac{\partial J(\beta)}{\partial \beta}
+\frac{\partial J}{\partial \beta}
 =
+-2X_b^T(y-X_b\beta)
+$$
+
+Setting the derivative equal to zero:
+
+$$
 -2X_b^T(y-X_b\beta)=0
+$$
+
+Rearranging:
+
+$$
+X_b^TX_b\beta=X_b^Ty
 $$
 
 Rearranging:
