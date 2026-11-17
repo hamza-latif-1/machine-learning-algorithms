@@ -180,22 +180,27 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 ```
 
-## 4. Comparison
+## 4. Comparison With Scikit-learn
 
-To validate the implementation, its results were compared with Scikit-learn's original LinearRegression model.
+To validate the implementation, its results were compared with Scikit-learn's original `LinearRegression` model.
 
+```python
 from sklearn.linear_model import LinearRegression
 
 originalLR = LinearRegression()
 originalLR.fit(X_train, y_train)
+```
 
 The custom implementation was trained using the same training data:
 
+```python
 myLR = MyLinearRegression()
 myLR.fit(X_train, y_train)
+```
 
 Both models were evaluated using the coefficient of determination (R²):
 
+```python
 from sklearn.metrics import r2_score
 
 orig_y_pred = originalLR.predict(X_test)
@@ -203,56 +208,55 @@ y_pred = myLR.predict(X_test)
 
 print(r2_score(y_test, orig_y_pred))
 print(r2_score(y_test, y_pred))
+```
 
-Observation: Both implementations produced similar coefficients, intercepts, and R² scores, validating the custom implementation against Scikit-learn on this dataset.
+**Observation:** Both implementations produced similar coefficients, intercepts, and R² scores, validating the custom implementation against Scikit-learn on this dataset.
 
-5. Evaluation Metric: R² Score
+## 5. Evaluation Metric: R² Score
 
 The coefficient of determination measures how well the model explains the variation in the target variable.
 
 $$
 R^2 = 1 -
-\frac{\sum_{i=1}^{n}(y_i-\hat{y}i)^2}
-{\sum{i=1}^{n}(y_i-\bar{y})^2}
+\frac{\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}
+{\sum_{i=1}^{n}(y_i-\bar{y})^2}
 $$
 
 Where:
 
-$y_i$ = actual value
-
-$\hat{y}_i$ = predicted value
-
-$\bar{y}$ = mean of actual target values
+- $y_i$ = actual value
+- $\hat{y}_i$ = predicted value
+- $\bar{y}$ = mean of actual target values
 
 A higher R² generally indicates that the model explains more of the variation in the target variable.
 
-6. Limitations
+## 6. Limitations
 
 This implementation uses the inverse of $X_b^TX_b$ directly.
 
-The matrix must be invertible.
-
-Perfect multicollinearity can make the matrix singular.
-
-Explicit matrix inversion can be numerically unstable for some datasets.
+- The matrix must be invertible.
+- Perfect multicollinearity can make the matrix singular.
+- Explicit matrix inversion can be numerically unstable for some datasets.
 
 More numerically robust alternatives include the Moore-Penrose pseudoinverse and least-squares solvers.
 
-7. Technologies Used
+## 7. Technologies Used
 
-Python
+- Python
+- NumPy
+- Scikit-learn (dataset, train-test split, comparison, and evaluation)
 
-NumPy
+**Important:** Scikit-learn was used for experimentation and validation, not for implementing the custom regression model.
 
-Scikit-learn (dataset, train-test split, comparison, and evaluation)
+## 8. Project Structure
 
-Important: Scikit-learn was used for experimentation and validation, not for implementing the custom regression model.
-
-8. Project Structure
-
+```text
 02-multiple-linear-regression/
 │
 ├── main.py
 └── README.md
+```
 
-Learning Objective: Understand the mathematical foundation of Multiple Linear Regression and implement its parameter estimation and prediction process from scratch using NumPy.
+---
+
+**Learning Objective:** Understand the mathematical foundation of Multiple Linear Regression and implement its parameter estimation and prediction process from scratch using NumPy.
