@@ -23,7 +23,7 @@ Where:
 - \(m\) = Slope (coefficient)
 - \(b\) = Intercept
 - \(x\) = Input feature
-- \(\hat{y}\) = Predicted output
+- $\hat{y}$ = Predicted output
 
 ### Cost Function
 
@@ -43,43 +43,43 @@ The objective of Gradient Descent is to minimize this cost function.
 
 ### Partial Derivatives
 
-To update the model parameters, we calculate the partial derivatives of the cost function with respect to \(m\) and \(b\).
+We calculate the partial derivatives of the cost function with respect to the slope (\(m\)) and intercept (\(b\)).
 
-**Derivative with respect to slope:**
-
-$$
-\frac{\partial J}{\partial m}
-=
--2\sum_{i=1}^{n}x_i(y_i-\hat{y}_i)
-$$
-
-**Derivative with respect to intercept:**
+**1. Derivative with respect to slope**
 
 $$
-\frac{\partial J}{\partial b}
-=
--2\sum_{i=1}^{n}(y_i-\hat{y}_i)
+\frac{\partial J}{\partial m} = -2 \sum_{i=1}^{n} x_i (y_i - \hat{y}_i)
+$$
+
+**2. Derivative with respect to intercept**
+
+$$
+\frac{\partial J}{\partial b} = -2 \sum_{i=1}^{n} (y_i - \hat{y}_i)
 $$
 
 These derivatives represent how the cost changes with respect to each parameter.
 
 ### Parameter Updates
 
-We update both parameters using the learning rate and their respective gradients:
+We update both parameters using the learning rate and their respective gradients.
+
+**Slope update:**
 
 $$
-m := m-\alpha\frac{\partial J}{\partial m}
+m = m - \alpha \frac{\partial J}{\partial m}
 $$
 
+**Intercept update:**
+
 $$
-b := b-\alpha\frac{\partial J}{\partial b}
+b = b - \alpha \frac{\partial J}{\partial b}
 $$
 
 Where:
 
-- \(\alpha\) = Learning rate
-- \(\frac{\partial J}{\partial m}\) = Gradient of the slope
-- \(\frac{\partial J}{\partial b}\) = Gradient of the intercept
+- \(\alpha\) represents the learning rate.
+- \(\frac{\partial J}{\partial m}\) represents the gradient of the slope.
+- \(\frac{\partial J}{\partial b}\) represents the gradient of the intercept.
 
 Both gradients are calculated using the current parameter values before updating either parameter.
 
