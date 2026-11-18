@@ -75,12 +75,6 @@ $$
 b = b - \alpha \frac{\partial J}{\partial b}
 $$
 
-Where:
-
-- \(\alpha\) represents the learning rate.
-- \(\frac{\partial J}{\partial m}\) represents the gradient of the slope.
-- \(\frac{\partial J}{\partial b}\) represents the gradient of the intercept.
-
 Both gradients are calculated using the current parameter values before updating either parameter.
 
 This process is repeated for a specified number of epochs until the cost is minimized or convergence is achieved.
