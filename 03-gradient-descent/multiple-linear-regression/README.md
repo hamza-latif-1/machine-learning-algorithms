@@ -51,26 +51,6 @@ Where:
 
 Gradient descent updates model parameters iteratively to minimize the cost function.
 
-**Gradient with respect to each coefficient:**
-
-$$
-\frac{\partial J}{\partial w_j}
-=
-\frac{2}{m}
-\sum_{i=1}^{m}
-(\hat{y}^{(i)}-y^{(i)})x_j^{(i)}
-$$
-
-**Gradient with respect to the intercept:**
-
-$$
-\frac{\partial J}{\partial b}
-=
-\frac{2}{m}
-\sum_{i=1}^{m}
-(\hat{y}^{(i)}-y^{(i)})
-$$
-
 **Coefficient update:**
 
 $$
