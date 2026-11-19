@@ -72,4 +72,58 @@ $$
 **Coefficient update:**
 
 $$
-w_j=w_j-\alpha\frac{\
+w_j=w_j-\alpha\frac{\partial J}{\partial w_j}
+$$
+
+**Intercept update:**
+
+$$
+b=b-\alpha\frac{\partial J}{\partial b}
+$$
+
+Where $\alpha$ represents the learning rate.
+
+## Implementation
+
+A custom `GDRegressor` class was developed using NumPy.
+
+The implementation includes:
+
+- Initialization of coefficients and intercept.
+- Prediction using matrix multiplication.
+- Calculation of gradients for coefficients and intercept.
+- Iterative parameter updates using gradient descent.
+- Prediction on unseen test data.
+
+## Model Comparison
+
+The custom Gradient Descent implementation was compared against Scikit-learn's `LinearRegression` model using the R² score.
+
+| Model | R² Score |
+|---|---:|
+| Scikit-learn Linear Regression | 0.43993 |
+| Custom Gradient Descent | 0.43932 |
+
+Both implementations achieved very similar R² scores on the same test dataset.
+
+## Technologies Used
+
+- Python
+- NumPy
+- Pandas / Scikit-learn
+- Matplotlib
+
+## Repository Contents
+
+- `gradient-descent.ipynb` – Complete implementation, model training, and comparison.
+
+## Key Learning Outcomes
+
+- Understanding gradient descent in multiple linear regression.
+- Implementing vectorized gradient calculations using NumPy.
+- Understanding coefficient and intercept optimization.
+- Comparing a custom machine learning implementation with Scikit-learn.
+
+---
+
+**Note:** This project is part of my journey to understand and implement machine learning algorithms from scratch.
