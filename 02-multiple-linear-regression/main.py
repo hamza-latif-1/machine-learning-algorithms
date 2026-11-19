@@ -22,6 +22,9 @@ class MyLinearRegression:
 
         return y_pred
 
+
+## Taking the pre-processed dataset from the library scikit-learn
+
 from sklearn.datasets import load_diabetes
 
 X,y = load_diabetes(return_X_y=True)
@@ -35,6 +38,9 @@ X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=
 
 print("X_train Shape ", X_train.shape)
 print("X_test Shape ", X_test.shape)
+
+
+## Testing the dataset with original scikit-learn linear regression algorithm
 
 from sklearn.linear_model import LinearRegression
 
@@ -51,6 +57,9 @@ from sklearn.metrics import r2_score
 
 print("Accuracy Score with original Algorithm: ",r2_score(y_test,orig_y_pred))
 
+
+## Testing the dataset with My own written linear regression algorithm
+
 myLR = MyLinearRegression()
 
 myLR.fit(X_train,y_train)
@@ -61,3 +70,5 @@ print("Offbias ", myLR.intercept_)
 y_pred = myLR.predict(X_test)
 
 print("Accuracy score with My LR Algorithm: ",r2_score(y_test, y_pred))
+
+## Both the algorithms show similar results
