@@ -53,30 +53,34 @@ Gradient descent updates model parameters iteratively to minimize the cost funct
 
 **Gradient with respect to each coefficient:**
 
-=
 $$
-\frac{2}{m}\sum_{i=1}^{m}
+\frac{\partial J}{\partial w_j}
+=
+\frac{2}{m}
+\sum_{i=1}^{m}
 (\hat{y}^{(i)}-y^{(i)})x_j^{(i)}
 $$
 
 **Gradient with respect to the intercept:**
 
-=
 $$
-\frac{2}{m}\sum_{i=1}^{m}
+\frac{\partial J}{\partial b}
+=
+\frac{2}{m}
+\sum_{i=1}^{m}
 (\hat{y}^{(i)}-y^{(i)})
 $$
 
 **Coefficient update:**
 
 $$
-w_j=w_j-\alpha\frac{\partial J}{\partial w_j}
+w_j = w_j - \alpha \frac{\partial J}{\partial w_j}
 $$
 
 **Intercept update:**
 
 $$
-b=b-\alpha\frac{\partial J}{\partial b}
+b = b - \alpha \frac{\partial J}{\partial b}
 $$
 
 Where $\alpha$ represents the learning rate.
