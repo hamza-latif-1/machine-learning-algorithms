@@ -46,35 +46,35 @@ A `StochasticRegressor` class is implemented using NumPy. It has two main method
 - `fit(X_train, y_train)`: initializes the intercept and coefficients, then iteratively updates them using gradients calculated from individual randomly selected training observations.
 - `predict(X_test)`: calculates predictions using the learned coefficients and intercept.
 
-The parameter update is based on the squared-error loss for one selected observation. For a prediction:
+The prediction for an individual observation is:
 
-\[
+$$
 \hat{y}^{(i)} = \mathbf{x}^{(i)} \cdot \mathbf{w} + b
-\]
+$$
 
 The gradients used in the implementation are:
 
 **Gradient with respect to the intercept:**
 
-\[
+$$
 \frac{\partial L_i}{\partial b} = -2(y^{(i)}-\hat{y}^{(i)})
-\]
+$$
 
 **Gradient with respect to the coefficients:**
 
-\[
+$$
 \frac{\partial L_i}{\partial \mathbf{w}} = -2(y^{(i)}-\hat{y}^{(i)})\mathbf{x}^{(i)}
-\]
+$$
 
 The parameters are updated using the learning rate:
 
-\[
+$$
 b \leftarrow b - \alpha\frac{\partial L_i}{\partial b}
-\]
+$$
 
-\[
+$$
 \mathbf{w} \leftarrow \mathbf{w} - \alpha\frac{\partial L_i}{\partial \mathbf{w}}
-\]
+$$
 
 In the notebook, the SGD model is initialized and trained with:
 
